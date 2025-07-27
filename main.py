@@ -3,8 +3,18 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import smtplib
 from email.message import EmailMessage
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Allow only devmohan.in and mohansagar.vercel.app
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://devmohan.in", "https://mohansagar.vercel.app"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class EmailRequest(BaseModel):
     to: str
