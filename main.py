@@ -31,7 +31,9 @@ async def send_email(request: EmailRequest):
     msg["From"] = email_address
     msg["To"] = request.to
     msg["Subject"] = request.subject
-    msg.set_content(request.content)
+    # Send HTML content
+    msg.set_content("This is an HTML email. If you see this, your client does not support HTML.")
+    msg.add_alternative(request.content, subtype="html")
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
             smtp.login(email_address, email_password)
