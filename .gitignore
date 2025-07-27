@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+.env*
+*.sqlite3
+*.db
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.mypy_cache/
+*.pytest_cache/
+*.coverage
+.coverage.*
+htmlcov/
+.tox/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+# VS Code
+.vscode/
+# Render
+render.yaml
